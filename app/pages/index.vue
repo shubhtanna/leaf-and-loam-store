@@ -31,7 +31,7 @@ const art: Record<string, [string, string, string]> = {
       <h2 class="sec">Shop by category</h2>
       <div class="cats">
         <NuxtLink v-for="c in categories" :key="c.slug" :to="`/shop/${c.slug}`" class="cat">
-          <PlantArt :art="art[c.slug][0]" :leaf="art[c.slug][1]" :pot="art[c.slug][2]" bg="#f1f5ec" />
+          <PlantArt :art="art[c.slug][0]" :leaf="art[c.slug][1]" :pot="art[c.slug][2]" bg="#f1f5ec" fill />
           <div>
             <strong>{{ c.name }}</strong>
             <span>{{ c.blurb }}</span>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // Flat illustration of the product, drawn from its art type and colours.
-const props = defineProps<{ art: string; leaf: string; pot: string; bg?: string }>()
+const props = defineProps<{ art: string; leaf: string; pot: string; bg?: string; fill?: boolean }>()
 const isPlant = computed(() => !['pot', 'bag', 'bottle', 'tool', 'can', 'pebbles'].includes(props.art))
 </script>
 
 <template>
-  <svg viewBox="0 0 200 220" class="plant-art" role="img" aria-hidden="true">
+  <svg viewBox="0 0 200 220" class="plant-art" role="img" aria-hidden="true" :preserveAspectRatio="fill ? 'xMidYMid slice' : 'xMidYMid meet'">
     <rect width="200" height="220" :fill="bg || '#eef3ea'" />
     <template v-if="isPlant">
       <!-- foliage -->
